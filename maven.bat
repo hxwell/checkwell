@@ -1,2 +1,2 @@
 @echo off
-mvn -f maven.xml dependency:copy-dependencies
+mvn -f pom.xml dependency:copy-dependencies
