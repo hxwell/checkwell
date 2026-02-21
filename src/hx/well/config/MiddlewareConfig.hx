@@ -2,9 +2,9 @@ package hx.well.config;
 import hx.well.middleware.DatabaseMiddleware;
 import hx.well.middleware.AbstractMiddleware;
 import hx.well.middleware.SessionAuthMiddleware;
-import hx.well.middleware.SessionMiddleware;
-import hx.well.middleware.SampleMiddleware;
 import hx.well.middleware.CorsMiddleware;
+import hx.well.middleware.CustomSessionMiddleware;
+import hx.well.middleware.SetSharedPropsMiddleware;
 
 class MiddlewareConfig implements IConfig {
     public function new() {}
@@ -13,9 +13,9 @@ class MiddlewareConfig implements IConfig {
         return [
             CorsMiddleware,
             DatabaseMiddleware,
-            SessionMiddleware,
+            CustomSessionMiddleware,
             SessionAuthMiddleware,
-            SampleMiddleware
+            SetSharedPropsMiddleware
         ];
     }
 }

@@ -1,26 +1,28 @@
 package hx.well.middleware;
+
+import hx.well.http.RequestStatic.request;
+import hx.well.facades.Environment.env;
+
+using StringTools;
+
 class CorsMiddleware extends AbstractCorsMiddleware {
-    public function allowedOrigins():Array<String> {
-        return ["*"];
-    }
+	public function allowedOrigins():Array<String> {
+		var domain:String = env("APP_DOMAIN");
 
-    public function allowedMethods():Array<String> {
-        return ["GET", "POST", "PUT", "DELETE", "OPTIONS"];
-    }
+		var origin:String = request().header("Origin");
 
-    public function allowedHeaders():Array<String> {
-        return [];
-    }
+		if (origin.endsWith(domain)) {
+			return [origin];
+		}
 
-    public function allowCredentials():Bool {
-        return false;
-    }
+		return ["*"];
+	}
 
-    public function maxAge():Int {
-        return 3600;
-    }
+	override public function allowCredentials():Bool {
+		return true;
+	}
 
-    public function exposedHeaders():Array<String> {
-        return [];
-    }
+	override public function maxAge():Int {
+		return 3600;
+	}
 }

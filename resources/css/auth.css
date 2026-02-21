@@ -1,0 +1,327 @@
+/* Auth Pages (Login & Register) - CheckWell */
+
+/* Base */
+.auth-page {
+    min-height: 100vh;
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-page::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(255, 193, 7, 0.05) 100%);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    filter: blur(60px);
+}
+
+.auth-page::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(255, 193, 7, 0.05) 100%);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -100px;
+    filter: blur(60px);
+}
+
+/* Container */
+.auth-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    width: 100%;
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo */
+.auth-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #FF6B00 0%, #FFC107 100%);
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.auth-logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FF6B00 0%, #FFC107 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.auth-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.auth-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.auth-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.auth-input {
+    padding: 0.9rem 1.2rem;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #FAFAFA;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #FF6B00;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.auth-input::placeholder {
+    color: #999;
+}
+
+/* Error State */
+.auth-input.error {
+    border-color: #ea4335;
+}
+
+.auth-error-message {
+    font-size: 0.85rem;
+    color: #ea4335;
+    margin-top: -0.5rem;
+}
+
+/* Checkbox */
+.auth-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.auth-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #FF6B00;
+}
+
+.auth-checkbox-label {
+    font-size: 0.9rem;
+    color: #444;
+    cursor: pointer;
+}
+
+/* Button */
+.auth-submit-button {
+    background: linear-gradient(135deg, #FF6B00 0%, #FFC107 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.3);
+    margin-top: 0.5rem;
+}
+
+.auth-submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 0, 0.4);
+}
+
+.auth-submit-button:active {
+    transform: translateY(0);
+}
+
+.auth-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Divider */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.auth-divider-line {
+    flex: 1;
+    height: 1px;
+    background: #E5E5E5;
+}
+
+.auth-divider-text {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+}
+
+/* Social Buttons */
+.auth-social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-social-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.auth-social-button:hover {
+    border-color: #FF6B00;
+    background: #FFF9F5;
+}
+
+/* Footer Link */
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #E5E5E5;
+}
+
+.auth-footer-text {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.auth-footer-link {
+    color: #FF6B00;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.auth-footer-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Back Link */
+.auth-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+    transition: color 0.2s;
+}
+
+.auth-back-link:hover {
+    color: #FF6B00;
+}
+
+/* Terms */
+.auth-terms {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.auth-terms a {
+    color: #FF6B00;
+    text-decoration: none;
+}
+
+.auth-terms a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .auth-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .auth-title {
+        font-size: 1.5rem;
+    }
+
+    .auth-social-buttons {
+        flex-direction: column;
+    }
+
+    .auth-back-link {
+        position: static;
+        margin-bottom: 1rem;
+    }
+}

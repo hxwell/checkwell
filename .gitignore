@@ -2,3 +2,4 @@
 Export
 *.iml
 .env
+node_modules
