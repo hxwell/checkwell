@@ -13,7 +13,6 @@ class BootProvider extends AbstractProvider {
 		sys.Http.PROXY = {host: "127.0.0.1", port: 8888, auth: null};
 
 		var appDomain:String = env("APP_DOMAIN");
-		Inertia.getSharedProps().set("appDomain", appDomain);
 
 		// Dash Route
 		Route.domain('dash.${appDomain}')
