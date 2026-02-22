@@ -7,16 +7,7 @@ class SetSharedPropsMiddleware extends AbstractMiddleware {
     public function handle(request:Request, next:(Request) -> Null<Response>):Null<Response> {
         var appDomain:String = env("APP_DOMAIN");
         Inertia.getSharedProps().set("appDomain", appDomain);
-
-        if(request.user() != null) {
-            Inertia.getSharedProps().set("auth", {
-                "user": request.user()
-            });
-        } else {
-            Inertia.getSharedProps().set("auth", {
-                "user": null
-            });
-        }
+        Inertia.getSharedProps().set("auth", {"user": request.user()});
         return next(request);
     }
 }
