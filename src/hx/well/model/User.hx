@@ -8,7 +8,6 @@ import haxe.crypto.random.SecureRandom.SecureRandom.range;
 
 @:connection("default")
 @:table("users")
-@:build(hx.well.macro.ModelMacro.build())
 class User extends BaseModel<User> implements IAuthenticatable {
     public static var query:BaseModelQuery<User> = useQuery();
 

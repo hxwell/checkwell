@@ -4,7 +4,6 @@ import hx.well.model.BaseModel;
 
 @:connection("default")
 @:table("organization_users")
-@:build(hx.well.macro.ModelMacro.build())
 class OrganizationUser extends BaseModel<OrganizationUser> {
     public static var query:BaseModelQuery<OrganizationUser> = useQuery();
 

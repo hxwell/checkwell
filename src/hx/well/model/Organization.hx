@@ -9,7 +9,6 @@ import haxe.crypto.random.SecureRandom.SecureRandom.range;
 
 @:connection("default")
 @:table("organizations")
-@:build(hx.well.macro.ModelMacro.build())
 class Organization extends BaseModel<Organization> {
     public static var query:BaseModelQuery<Organization>;
 
